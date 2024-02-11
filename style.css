@@ -1,0 +1,30 @@
+@tailwind base;
+@tailwind utilities;
+@tailwind components;
+ 
+@layer components {
+  .active-step-icon {
+    @apply flex w-full items-center text-blue-600 
+  }
+  .active-step-icon::after {
+    @apply content-[''] w-full h-1 border-b border-blue-100 border-4 inline-block;
+  }
+
+  .inactive-step-icon {
+    @apply flex w-full items-center;
+  }
+  .inactive-step-icon::after {
+    @apply content-[''] w-full h-1 border-b border-gray-100 border-4 inline-block;
+  }
+
+
+  .step {
+    @apply w-full h-full flex-col hidden my-4;
+  }
+  .step-active {
+    @apply flex;
+  }
+}
+body {
+  font-family: 'Open Sans', sans-serif;
+}

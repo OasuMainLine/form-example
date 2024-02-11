@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="color-scheme" content="light">
+  <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="main.css">
+  <title>Vite App</title>
+</head>
+
+<body>
+  <div class="grid place-items-center mt-24 ">
+
+
+    <h1 class="text-xl font-sans font-medium">MultiStep Form</h1>
+
+    <div id="submit-photo" class="w-full h-full hidden grid place-items-center rounded-full">
+      <div class="w-60 h-60">
+        <img class="w-full h-full object-cover" src="https://media1.tenor.com/m/1Y42Mgr57SUAAAAC/this-is-fine.gif"
+          alt="">
+      </div>
+    </div>
+    <form class="shadow-lg p-4 w-1/2">
+      <div id="stepper">
+        <ol
+          class="flex items-center w-full text-sm font-medium text-center text-gray-500 dark:text-gray-400 sm:text-base">
+          <li data-step="1"
+            class="flex md:w-full items-center text-blue-600 dark:text-blue-500 sm:after:content-[''] after:w-full after:h-1 after:border-b after:border-gray-200 after:border-1 after:hidden sm:after:inline-block after:mx-6 xl:after:mx-10 dark:after:border-gray-700">
+            <span
+              class="flex items-center after:content-['/'] sm:after:hidden after:mx-2 after:text-gray-200 dark:after:text-gray-500">
+              <span class="me-2">1</span>
+              Personal <span class="hidden sm:inline-flex sm:ms-2">Info</span>
+            </span>
+          </li>
+          <li data-step="2"
+            class="flex md:w-full items-center after:content-[''] after:w-full after:h-1 after:border-b after:border-gray-200 after:border-1 after:hidden sm:after:inline-block after:mx-6 xl:after:mx-10 dark:after:border-gray-700">
+            <span
+              class="flex items-center after:content-['/'] sm:after:hidden after:mx-2 after:text-gray-200 dark:after:text-gray-500">
+              <span class="me-2">2</span>
+              Account <span class="hidden sm:inline-flex sm:ms-2">Info</span>
+            </span>
+          </li>
+          <li data-step="3" class="flex items-center">
+            <span class="me-2">3</span>
+            Confirmation
+          </li>
+        </ol>
+
+      </div>
+
+      <div class="step step-active" data-step="1" data-active="true">
+        <div class="mb-6">
+          <label for="default-input" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Name</label>
+          <input type="text" id="default-input" required
+            class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+        </div>
+        <label for="input-group-1" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Your
+          Email</label>
+        <div class="relative mb-6">
+          <div class="absolute inset-y-0 start-0 flex items-center ps-3.5 pointer-events-none">
+            <svg class="w-4 h-4 text-gray-500 dark:text-gray-400" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+              fill="currentColor" viewBox="0 0 20 16">
+              <path d="m10.036 8.278 9.258-7.79A1.979 1.979 0 0 0 18 0H2A1.987 1.987 0 0 0 .641.541l9.395 7.737Z" />
+              <path
+                d="M11.241 9.817c-.36.275-.801.425-1.255.427-.428 0-.845-.138-1.187-.395L0 2.6V14a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V2.5l-8.759 7.317Z" />
+            </svg>
+          </div>
+          <input type="email" id="input-group-1" required
+            class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full ps-10 p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+            placeholder="name@selenium.com">
+        </div>
+      </div>
+
+      <div class="step" data-step="2" data-active="false">
+        <div class="mb-6">
+          <label for="default-input"
+            class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Username</label>
+          <input type="text" id="default-input" required
+            class="bg-gray-50 border invalid:ring-red-500 border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+        </div>
+        <div class="mb-6">
+          <label for="default-input"
+            class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Password</label>
+          <input type="password" id="default-input" data-error="This isn't a valid email..." required
+            class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+        </div>
+      </div>
+      <div class="step" data-step="3" data-active="false">
+        <div class="flex items-center">
+          <input id="link-checkbox" type="checkbox" value=""
+            class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
+          <label for="link-checkbox" class="ms-2 text-sm font-medium text-gray-900 dark:text-gray-300">Hereby I give all
+            my human rights to Jeff Bezos and Associates, for more information read the
+            <a href="#" class="text-blue-600 dark:text-blue-500 hover:underline">terms and conditions</a>.</label>
+        </div>
+      </div>
+      <div class="flex w-full h-fit flex-nowrap">
+        <button type="button" id="prevButton"
+          class="py-2.5 hidden w-full px-5 me-2 mb-2 text-sm font-medium text-gray-900 focus:outline-none bg-white rounded-lg border border-gray-200 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700">Previous</button>
+        <button type="button" id="nextButton"
+          class="text-white w-full bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">Next</button>
+        <button type="submit" id="submitButton"
+          class="text-white hidden w-full bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">Submit</button>
+      </div>
+    </form>
+  </div>
+  <script type="module" src="/main.js"></script>
+</body>
+
+</html>
